@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf8 -*-
+# -*- coding: utf-8 -*-
 """
 Easily spoof your MAC address in OS X, Windows & Linux.
 """
@@ -11,7 +11,7 @@ def get_version():
     Load and return the current package version.
     """
     local_results = {}
-    execfile('spoofmac/version.py', {}, local_results)
+    exec(compile(open('spoofmac/version.py').read(), 'spoofmac/version.py', 'exec'), {}, local_results)
     return local_results['__version__']
 
 
@@ -30,7 +30,8 @@ if __name__ == '__main__':
             'docopt'
         ],
         scripts=[
-            'scripts/spoof-mac'
+            'scripts/spoof-mac.py',
+	    'scripts/spoof-mac'
         ],
         license='MIT'
     )
